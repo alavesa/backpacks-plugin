@@ -1,0 +1,760 @@
+{
+ "meta": {
+  "format_version": "4.5",
+  "model_format": "java_block",
+  "box_uv": false
+ },
+ "name": "leather_backpack",
+ "model_identifier": "",
+ "visible_box": [
+  1,
+  1,
+  0
+ ],
+ "variable_placeholders": "",
+ "variable_placeholder_buttons": [],
+ "unhandled_root_fields": {},
+ "resolution": {
+  "width": 32,
+  "height": 32
+ },
+ "elements": [
+  {
+   "name": "body",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "from": [
+    3,
+    2,
+    5
+   ],
+   "to": [
+    13,
+    13,
+    10
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8,
+    0,
+    8
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": 0
+    },
+    "south": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": 0
+    },
+    "east": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": 0
+    },
+    "west": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": 0
+    },
+    "up": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": 0
+    },
+    "down": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": 0
+    }
+   },
+   "type": "cube",
+   "uuid": "4cd71469-228d-4bcf-83d5-11b5c3dd77c3"
+  },
+  {
+   "name": "lid",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "from": [
+    2.5,
+    12,
+    4.5
+   ],
+   "to": [
+    13.5,
+    14,
+    10.5
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8,
+    0,
+    8
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      0,
+      16,
+      16,
+      32
+     ],
+     "texture": 0
+    },
+    "south": {
+     "uv": [
+      0,
+      16,
+      16,
+      32
+     ],
+     "texture": 0
+    },
+    "east": {
+     "uv": [
+      0,
+      16,
+      16,
+      32
+     ],
+     "texture": 0
+    },
+    "west": {
+     "uv": [
+      0,
+      16,
+      16,
+      32
+     ],
+     "texture": 0
+    },
+    "up": {
+     "uv": [
+      0,
+      16,
+      16,
+      32
+     ],
+     "texture": 0
+    },
+    "down": {
+     "uv": [
+      0,
+      16,
+      16,
+      32
+     ],
+     "texture": 0
+    }
+   },
+   "type": "cube",
+   "uuid": "f8d57554-eee4-4441-bf23-4d5d83d602fb"
+  },
+  {
+   "name": "pocket",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "from": [
+    5,
+    3,
+    3.5
+   ],
+   "to": [
+    11,
+    8,
+    5
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8,
+    0,
+    8
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      0,
+      16,
+      16,
+      32
+     ],
+     "texture": 0
+    },
+    "south": {
+     "uv": [
+      0,
+      16,
+      16,
+      32
+     ],
+     "texture": 0
+    },
+    "east": {
+     "uv": [
+      0,
+      16,
+      16,
+      32
+     ],
+     "texture": 0
+    },
+    "west": {
+     "uv": [
+      0,
+      16,
+      16,
+      32
+     ],
+     "texture": 0
+    },
+    "up": {
+     "uv": [
+      0,
+      16,
+      16,
+      32
+     ],
+     "texture": 0
+    },
+    "down": {
+     "uv": [
+      0,
+      16,
+      16,
+      32
+     ],
+     "texture": 0
+    }
+   },
+   "type": "cube",
+   "uuid": "79d89d93-0cd7-4714-97bb-03d9a9b2846d"
+  },
+  {
+   "name": "strap_l",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "from": [
+    4,
+    3,
+    10
+   ],
+   "to": [
+    6,
+    13,
+    11
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8,
+    0,
+    8
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      16,
+      0,
+      32,
+      16
+     ],
+     "texture": 0
+    },
+    "south": {
+     "uv": [
+      16,
+      0,
+      32,
+      16
+     ],
+     "texture": 0
+    },
+    "east": {
+     "uv": [
+      16,
+      0,
+      32,
+      16
+     ],
+     "texture": 0
+    },
+    "west": {
+     "uv": [
+      16,
+      0,
+      32,
+      16
+     ],
+     "texture": 0
+    },
+    "up": {
+     "uv": [
+      16,
+      0,
+      32,
+      16
+     ],
+     "texture": 0
+    },
+    "down": {
+     "uv": [
+      16,
+      0,
+      32,
+      16
+     ],
+     "texture": 0
+    }
+   },
+   "type": "cube",
+   "uuid": "7b6d6b02-4913-460a-a946-9ff6bf42997f"
+  },
+  {
+   "name": "strap_r",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "from": [
+    10,
+    3,
+    10
+   ],
+   "to": [
+    12,
+    13,
+    11
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8,
+    0,
+    8
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      16,
+      0,
+      32,
+      16
+     ],
+     "texture": 0
+    },
+    "south": {
+     "uv": [
+      16,
+      0,
+      32,
+      16
+     ],
+     "texture": 0
+    },
+    "east": {
+     "uv": [
+      16,
+      0,
+      32,
+      16
+     ],
+     "texture": 0
+    },
+    "west": {
+     "uv": [
+      16,
+      0,
+      32,
+      16
+     ],
+     "texture": 0
+    },
+    "up": {
+     "uv": [
+      16,
+      0,
+      32,
+      16
+     ],
+     "texture": 0
+    },
+    "down": {
+     "uv": [
+      16,
+      0,
+      32,
+      16
+     ],
+     "texture": 0
+    }
+   },
+   "type": "cube",
+   "uuid": "fa874564-17e7-4977-a46b-fc8abfc05a0a"
+  },
+  {
+   "name": "buckle",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "from": [
+    7,
+    8,
+    2.8
+   ],
+   "to": [
+    9,
+    9.5,
+    3.5
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8,
+    0,
+    8
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      16,
+      16,
+      32,
+      32
+     ],
+     "texture": 0
+    },
+    "south": {
+     "uv": [
+      16,
+      16,
+      32,
+      32
+     ],
+     "texture": 0
+    },
+    "east": {
+     "uv": [
+      16,
+      16,
+      32,
+      32
+     ],
+     "texture": 0
+    },
+    "west": {
+     "uv": [
+      16,
+      16,
+      32,
+      32
+     ],
+     "texture": 0
+    },
+    "up": {
+     "uv": [
+      16,
+      16,
+      32,
+      32
+     ],
+     "texture": 0
+    },
+    "down": {
+     "uv": [
+      16,
+      16,
+      32,
+      32
+     ],
+     "texture": 0
+    }
+   },
+   "type": "cube",
+   "uuid": "0642e828-8689-4e83-9237-a917748d3b49"
+  },
+  {
+   "name": "handle",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "from": [
+    6.5,
+    14,
+    7
+   ],
+   "to": [
+    9.5,
+    15,
+    8
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8,
+    0,
+    8
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      16,
+      0,
+      32,
+      16
+     ],
+     "texture": 0
+    },
+    "south": {
+     "uv": [
+      16,
+      0,
+      32,
+      16
+     ],
+     "texture": 0
+    },
+    "east": {
+     "uv": [
+      16,
+      0,
+      32,
+      16
+     ],
+     "texture": 0
+    },
+    "west": {
+     "uv": [
+      16,
+      0,
+      32,
+      16
+     ],
+     "texture": 0
+    },
+    "up": {
+     "uv": [
+      16,
+      0,
+      32,
+      16
+     ],
+     "texture": 0
+    },
+    "down": {
+     "uv": [
+      16,
+      0,
+      32,
+      16
+     ],
+     "texture": 0
+    }
+   },
+   "type": "cube",
+   "uuid": "b8139c9f-603f-4567-8911-3308458b349b"
+  }
+ ],
+ "outliner": [
+  {
+   "name": "backpack",
+   "origin": [
+    8,
+    0,
+    8
+   ],
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "color": 0,
+   "uuid": "4fb9a3a4-128f-4037-9e04-5aa22b17efed",
+   "export": true,
+   "mirror_uv": false,
+   "isOpen": true,
+   "locked": false,
+   "visibility": true,
+   "autouv": 0,
+   "children": [
+    "4cd71469-228d-4bcf-83d5-11b5c3dd77c3",
+    "f8d57554-eee4-4441-bf23-4d5d83d602fb",
+    "79d89d93-0cd7-4714-97bb-03d9a9b2846d",
+    "7b6d6b02-4913-460a-a946-9ff6bf42997f",
+    "fa874564-17e7-4977-a46b-fc8abfc05a0a",
+    "0642e828-8689-4e83-9237-a917748d3b49",
+    "b8139c9f-603f-4567-8911-3308458b349b"
+   ]
+  }
+ ],
+ "textures": [
+  {
+   "path": "",
+   "name": "leather_backpack.png",
+   "folder": "item",
+   "namespace": "backpacks",
+   "id": "0",
+   "particle": true,
+   "render_mode": "default",
+   "visible": true,
+   "mode": "bitmap",
+   "saved": false,
+   "uuid": "309c3e67-9f03-4984-977b-0bbbc1abb0c1",
+   "relative_path": "leather_backpack.png",
+   "source": "data:image/png;base64,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"
+  }
+ ],
+ "display": {
+  "thirdperson_righthand": {
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0,
+    3,
+    1
+   ],
+   "scale": [
+    0.4,
+    0.4,
+    0.4
+   ]
+  },
+  "thirdperson_lefthand": {
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0,
+    3,
+    1
+   ],
+   "scale": [
+    0.4,
+    0.4,
+    0.4
+   ]
+  },
+  "firstperson_righthand": {
+   "rotation": [
+    0,
+    45,
+    0
+   ],
+   "translation": [
+    0,
+    2,
+    0
+   ],
+   "scale": [
+    0.45,
+    0.45,
+    0.45
+   ]
+  },
+  "firstperson_lefthand": {
+   "rotation": [
+    0,
+    -45,
+    0
+   ],
+   "translation": [
+    0,
+    2,
+    0
+   ],
+   "scale": [
+    0.45,
+    0.45,
+    0.45
+   ]
+  },
+  "gui": {
+   "rotation": [
+    30,
+    225,
+    0
+   ],
+   "translation": [
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    0.65,
+    0.65,
+    0.65
+   ]
+  },
+  "ground": {
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0,
+    2,
+    0
+   ],
+   "scale": [
+    0.3,
+    0.3,
+    0.3
+   ]
+  },
+  "head": {
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    0.6,
+    0.6,
+    0.6
+   ]
+  }
+ }
+}

@@ -1,0 +1,111 @@
+# Backpacks - crafting recipes. Edit freely; /backpack reload re-registers them.
+# Each recipe: shape = 3 rows of 3 characters (space = empty), key = what each character is.
+# A key value is either a vanilla item (minecraft:iron_ingot / IRON_INGOT) or a custom item:
+#   backpacks:<tier>            e.g. backpacks:leather   (a backpack of that tier; its contents carry over)
+#   backpacks:upgrade_base      / backpacks:<upgrade id>
+# result: the same kind of id, with an optional amount.
+recipes:
+  leather_backpack:
+    shape: ["LLL", "LCL", "LLL"]
+    key: { L: LEATHER, C: CHEST }
+    result: backpacks:leather
+  copper_backpack:
+    shape: ["III", "ICI", "III"]
+    key: { I: COPPER_INGOT, C: CHEST }
+    result: backpacks:copper
+  iron_backpack:
+    shape: ["III", "ICI", "III"]
+    key: { I: IRON_INGOT, C: CHEST }
+    result: backpacks:iron
+  gold_backpack:
+    shape: ["GGG", "GCG", "GGG"]
+    key: { G: GOLD_INGOT, C: CHEST }
+    result: backpacks:gold
+  diamond_backpack:
+    shape: ["DDD", "DCD", "DDD"]
+    key: { D: DIAMOND, C: CHEST }
+    result: backpacks:diamond
+  netherite_backpack:
+    shape: ["NNN", "NCN", "NNN"]
+    key: { N: NETHERITE_INGOT, C: CHEST }
+    result: backpacks:netherite
+
+  # Tier upgrades: the previous backpack in the middle keeps its contents and upgrades.
+  leather_to_copper:
+    shape: ["III", "IBI", "III"]
+    key: { I: COPPER_INGOT, B: backpacks:leather }
+    result: backpacks:copper
+  copper_to_iron:
+    shape: ["III", "IBI", "III"]
+    key: { I: IRON_INGOT, B: backpacks:copper }
+    result: backpacks:iron
+  iron_to_gold:
+    shape: ["GGG", "GBG", "GGG"]
+    key: { G: GOLD_INGOT, B: backpacks:iron }
+    result: backpacks:gold
+  gold_to_diamond:
+    shape: ["DDD", "DBD", "DDD"]
+    key: { D: DIAMOND, B: backpacks:gold }
+    result: backpacks:diamond
+  diamond_to_netherite:
+    shape: ["NNN", "NBN", "NNN"]
+    key: { N: NETHERITE_INGOT, B: backpacks:diamond }
+    result: backpacks:netherite
+
+  # Upgrades.
+  upgrade_base:
+    shape: ["SLS", "LIL", "SLS"]
+    key: { S: STICK, L: LEATHER, I: IRON_INGOT }
+    result: backpacks:upgrade_base
+  pickup:
+    shape: [" H ", " U ", "   "]
+    key: { H: HOPPER, U: backpacks:upgrade_base }
+    result: backpacks:pickup
+  advanced_pickup:
+    shape: [" D ", " P ", " H "]
+    key: { D: DIAMOND, P: backpacks:pickup, H: HOPPER }
+    result: backpacks:advanced_pickup
+  magnet:
+    shape: ["I I", " U ", "I I"]
+    key: { I: IRON_INGOT, U: backpacks:pickup }
+    result: backpacks:magnet
+  advanced_magnet:
+    shape: ["D D", " M ", "D D"]
+    key: { D: DIAMOND, M: backpacks:magnet }
+    result: backpacks:advanced_magnet
+  feeding:
+    shape: ["GAG", " U ", "   "]
+    key: { G: GOLD_INGOT, A: APPLE, U: backpacks:upgrade_base }
+    result: backpacks:feeding
+  advanced_feeding:
+    shape: [" G ", "DFD", "   "]
+    key: { G: GOLDEN_APPLE, D: DIAMOND, F: backpacks:feeding }
+    result: backpacks:advanced_feeding
+  void:
+    shape: [" L ", "OUO", " O "]
+    key: { L: LAVA_BUCKET, O: OBSIDIAN, U: backpacks:upgrade_base }
+    result: backpacks:void
+  refill:
+    shape: ["RCR", " U ", "   "]
+    key: { R: REDSTONE, C: CHEST, U: backpacks:upgrade_base }
+    result: backpacks:refill
+  compacting:
+    shape: ["PCP", " U ", "   "]
+    key: { P: PISTON, C: CRAFTING_TABLE, U: backpacks:upgrade_base }
+    result: backpacks:compacting
+  inception:
+    shape: ["EEE", "EUE", "EEE"]
+    key: { E: ENDER_EYE, U: backpacks:upgrade_base }
+    result: backpacks:inception
+  everlasting:
+    shape: [" N ", " U ", "   "]
+    key: { N: NETHER_STAR, U: backpacks:upgrade_base }
+    result: backpacks:everlasting
+  deposit:
+    shape: [" D ", " U ", "   "]
+    key: { D: DROPPER, U: backpacks:upgrade_base }
+    result: backpacks:deposit
+  restock:
+    shape: [" D ", " U ", "   "]
+    key: { D: DISPENSER, U: backpacks:upgrade_base }
+    result: backpacks:restock

@@ -1,0 +1,21 @@
+name: backpacks
+version: '${project.version}'
+main: fi.alavesa.backpacks.BackpacksPlugin
+api-version: '1.21'
+author: alavesa
+description: Upgradable, wearable, placeable backpacks with Blockbench models.
+commands:
+  backpack:
+    description: Backpacks admin and player command.
+    usage: /backpack help
+    aliases: [bp, backpacks]
+permissions:
+  backpacks.use:
+    description: Open, wear and place backpacks.
+    default: true
+  backpacks.place:
+    description: Place backpacks in the world.
+    default: true
+  backpacks.admin:
+    description: Give, create, edit and remove backpack types, rebuild the pack, reload.
+    default: op

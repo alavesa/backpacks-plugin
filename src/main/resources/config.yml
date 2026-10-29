@@ -1,0 +1,209 @@
+# Backpacks - configuration.
+# Tiers, upgrades, worn/placed rendering, loot, mob spawns, automation.
+# Crafting recipes live in recipes.yml. Models go in backpack_models/<model>.bbmodel.
+# The resource pack is generated into resourcepack/ (folder + Backpacks-resourcepack.zip) and must be
+# installed by players manually (it is NOT sent to clients).
+
+# ---------------------------------------------------------------------------------------------------
+# Backpack tiers. 'slots' = storage slots (1..54, shown as rows of 9; the last row is padded with
+# locked panes when it is not a multiple of 9). 'upgrade-slots' = how many upgrades fit (0..18).
+# 'model' = the .bbmodel file name in backpack_models/ (without extension). 'material' = the base item
+# the backpack is built on (what players see WITHOUT the resource pack). 'color' = name colour.
+# 'next' = the tier this one upgrades into (used by the tier-upgrade recipes in recipes.yml).
+# Commands: /backpack type create|edit|remove|list   (edits are written back to this file).
+tiers:
+  leather:
+    name: "Leather Backpack"
+    slots: 9
+    upgrade-slots: 1
+    model: leather_backpack
+    material: PAPER
+    color: "#A0522D"
+    order: 1
+  copper:
+    name: "Copper Backpack"
+    slots: 18
+    upgrade-slots: 2
+    model: copper_backpack
+    material: PAPER
+    color: "#C87533"
+    order: 2
+  iron:
+    name: "Iron Backpack"
+    slots: 27
+    upgrade-slots: 3
+    model: iron_backpack
+    material: PAPER
+    color: "#D8D8D8"
+    order: 3
+  gold:
+    name: "Gold Backpack"
+    slots: 36
+    upgrade-slots: 4
+    model: gold_backpack
+    material: PAPER
+    color: "#FFD700"
+    order: 4
+  diamond:
+    name: "Diamond Backpack"
+    slots: 45
+    upgrade-slots: 5
+    model: diamond_backpack
+    material: PAPER
+    color: "#5DE2E7"
+    order: 5
+  netherite:
+    name: "Netherite Backpack"
+    slots: 54
+    upgrade-slots: 6
+    model: netherite_backpack
+    material: PAPER
+    color: "#4A3B45"
+    order: 6
+
+# ---------------------------------------------------------------------------------------------------
+# Upgrades. 'filter-slots' = how many item filters the upgrade's filter screen has (0 = no filter).
+# 'material' = the base item of the upgrade (shown as-is, with a custom name). 'model' = optional
+# item_model id (e.g. "backpacks:pickup_upgrade") if you add your own model/texture to the pack.
+upgrades:
+  active-in-inventory: true     # true: upgrades also work while the backpack is in the inventory, not only when worn
+  active-in-offhand: true
+  tick-interval: 5              # ticks between upgrade passes (magnet, feeding, refill, compacting)
+  pickup:
+    name: "Pickup Upgrade"
+    material: HOPPER
+    filter-slots: 9
+  advanced_pickup:
+    name: "Advanced Pickup Upgrade"
+    material: HOPPER
+    filter-slots: 16
+  magnet:
+    name: "Magnet Upgrade"
+    material: COMPASS
+    filter-slots: 9
+    radius: 3.5
+  advanced_magnet:
+    name: "Advanced Magnet Upgrade"
+    material: RECOVERY_COMPASS
+    filter-slots: 16
+    radius: 6.0
+  feeding:
+    name: "Feeding Upgrade"
+    material: APPLE
+    filter-slots: 4
+    # basic: only eats when nothing of the food's nutrition would be wasted
+  advanced_feeding:
+    name: "Advanced Feeding Upgrade"
+    material: GOLDEN_APPLE
+    filter-slots: 9
+    # advanced: eats as soon as the hunger bar is not full, prefers the most filling food
+  void:
+    name: "Void Upgrade"
+    material: OBSIDIAN
+    filter-slots: 9
+  refill:
+    name: "Refill Upgrade"
+    material: REDSTONE
+    filter-slots: 6
+  compacting:
+    name: "Compacting Upgrade"
+    material: PISTON
+    filter-slots: 9
+    require-reversible: true    # only compact 3x3 / 2x2 when the result can be crafted back into the originals
+  inception:
+    name: "Inception Upgrade"
+    material: ENDER_EYE
+    filter-slots: 0
+  everlasting:
+    name: "Everlasting Upgrade"
+    material: NETHER_STAR
+    filter-slots: 0
+  deposit:
+    name: "Deposit Upgrade"
+    material: DROPPER
+    filter-slots: 9
+  restock:
+    name: "Restock Upgrade"
+    material: DISPENSER
+    filter-slots: 9
+
+# ---------------------------------------------------------------------------------------------------
+# Worn backpack (chest slot): an ItemDisplay rides the player/mob and is turned with its body.
+# The model's bottom-centre sits on the display entity, which the client puts at the top of the
+# wearer's head - so 'translation' is in blocks relative to that point. -Z is behind the wearer.
+worn:
+  enabled: true
+  translation: [0.0, -1.05, -0.30]
+  scale: 0.55
+  yaw-offset: 0.0         # add 180 if your model's front faces the other way
+  view-range: 0.6         # ItemDisplay view range multiplier
+  render-on-mobs: true
+
+# Placed backpack (sneak-right-click a block with the backpack in hand).
+placed:
+  enabled: true
+  solid-block: true       # also put an invisible BARRIER block there so it is solid (removed on pickup)
+  snap-rotation: 90       # degrees; 0 = free rotation
+  yaw-offset: 0.0
+  scale: 1.0
+  interaction-size: 1.02  # Interaction entity width/height (blocks); must cover the barrier
+  break-with-left-click: true   # left-click = pick up ("break"), like a block
+  automation: true        # hoppers (search event) and droppers can insert / extract
+
+# ---------------------------------------------------------------------------------------------------
+loot:
+  chests:
+    enabled: true
+    backpack-chance: 0.06
+    upgrade-chance: 0.08
+    tier-weights: { leather: 60, copper: 25, iron: 10, gold: 4, diamond: 1, netherite: 0 }
+    upgrade-weights: { pickup: 10, magnet: 6, feeding: 6, void: 4, refill: 5, compacting: 4, deposit: 4, restock: 4, inception: 1, everlasting: 1 }
+    # Only loot tables whose key contains one of these (empty = every table under chests/).
+    tables: []
+  mobs:
+    enabled: true
+    chance: 0.012
+    entity-types: [ZOMBIE, HUSK, DROWNED, SKELETON, STRAY, BOGGED, PIGLIN, ZOMBIFIED_PIGLIN, PILLAGER, VINDICATOR, WITCH]
+    tier-weights: { leather: 70, copper: 20, iron: 8, gold: 2, diamond: 0, netherite: 0 }
+    loot-chance: 0.6
+    loot-table: "minecraft:chests/simple_dungeon"
+    loot-max-stacks: 6
+    drop-chance: 0.85
+
+# ---------------------------------------------------------------------------------------------------
+recipes:
+  enabled: true
+  auto-discover: true     # unlock the recipes in the recipe book on join
+
+storage:
+  autosave-seconds: 30
+  cache-minutes: 15       # unload backpack data not touched for this long
+
+gui:
+  storage-title: "<name>"
+  upgrades-title: "<name> - Upgrades"
+  filter-title: "<upgrade> - Filter"
+
+# Resource pack generation.
+pack:
+  namespace: backpacks
+  description: "Backpacks models"
+  min-format: 46
+  max-format: 999
+  mesh-policy: bounding-box      # fail | bounding-box
+  missing-texture: warn          # fail | warn
+  extract-default-models: true   # copy the bundled example models into backpack_models/ when it is empty
+  build-on-start: true
+
+messages:
+  prefix: "<gray>[<gold>Backpacks</gold>]</gray> "
+  no-permission: "<red>You may not do that."
+  placed: "<green>Backpack placed."
+  picked-up: "<green>Backpack picked up."
+  cannot-place: "<red>You cannot place a backpack there."
+  inventory-full: "<yellow>Your inventory is full - the backpack was dropped."
+  no-nesting: "<red>Backpacks cannot be put inside a backpack without an Inception upgrade."
+  upgrade-only: "<red>Only upgrade items fit in the upgrade slots."
+  upgrade-duplicate: "<red>This backpack already has that upgrade."
+  deposit-done: "<green>Deposited <count> item(s)."
+  restock-done: "<green>Restocked <count> item(s)."
